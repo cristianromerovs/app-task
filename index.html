@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <form id="task-form">
+                            <div class="form-group">
+                                <input type="text" id="task-title" class="form-control" placeholder="Task title" autofocus>
+                                <textarea id="task-description" rows="3" class="form-control" placeholder="Task description"></textarea>
+                                <button class="btn btn-primary" id="btn-task-form">Save</button>
+                            </div>
+                        </form>                    
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6" id="tasks-container">
+
+            </div>
+        </div>
+    </div>
+   
+
+
+    <!-- <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-firestore.js"></script>
+
+    <script>
+        var firebaseConfig = {
+            apiKey: "AIzaSyBw-tOgWC2jpN_2fbCMxhjYk9cmjwznzuI",
+            authDomain: "catalogo-drusa.firebaseapp.com",
+            projectId: "catalogo-drusa",
+            storageBucket: "catalogo-drusa.appspot.com",
+            messagingSenderId: "794467904531",
+            appId: "1:794467904531:web:8feeddcb34f0c7cc1a63e6"
+        };
+        firebase.initializeApp(firebaseConfig);
+    </script> -->
+
+<script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-firestore.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBL23dEQr6BOocE4n6yjCAMMtRBCVpSdGU",
+    authDomain: "app-task-5151f.firebaseapp.com",
+    projectId: "app-task-5151f",
+    storageBucket: "app-task-5151f.appspot.com",
+    messagingSenderId: "966922945727",
+    appId: "1:966922945727:web:634143ac04013188ca320a"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+
+    <script src="app.js"></script>
+</body>
+</html>
