@@ -6,9 +6,10 @@ const taskContainer = document.getElementById('tasks-container');
 let editStatus = false;
 let id = '';
 
-const saveTask = (title, description) => 
+const saveTask = (title, image, description) => 
     db.collection('tasks').doc().set({
         title,
+        image,
         description
     });
 
@@ -34,6 +35,7 @@ window.addEventListener('DOMContentLoaded', async (e) => {
     
             taskContainer.innerHTML += `
             <div class="card card-body mt-2">
+                <img class="img-main" src="${task.image}";
                 <h3 class="h5">${task.title}</h3>
                 <p>${task.description}</p>
                 <div>
@@ -58,6 +60,7 @@ window.addEventListener('DOMContentLoaded', async (e) => {
                     id = doc.id;
 
                     taskForm['task-title'].value = task.title;
+                    taskForm['task-image'].value = task.image;
                     taskForm['task-description'].value = task.description;
                     taskForm['btn-task-form'].innerText = 'Update';
                 })
@@ -70,13 +73,16 @@ taskForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     const title = taskForm['task-title'];
+    const image = taskForm['task-image'];
     const description = taskForm['task-description'];
+    
 
     if (!editStatus) {
-        await saveTask(title.value, description.value);
+        await saveTask(title.value, image.value, description.value);
     } else {
         await updateTask(id, {
             title: title.value,
+            image: image.value,
             description: description.value
         });
 
